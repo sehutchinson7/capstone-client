@@ -47,5 +47,15 @@ $(() => {
     $('#get-location').click(function (event) {
       addCurrentLocationToMap()
     })
+
+    // Make the map clickable
+    const popup = L.popup()
+    function onMapClick (event) {
+      popup
+        .setLatLng(event.latlng)
+        .setContent('Location: ' + event.latlng)
+        .openOn(map)
+    }
+    map.on('click', onMapClick)
   })
 })
