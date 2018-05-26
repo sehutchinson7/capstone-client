@@ -24,7 +24,7 @@ $(() => {
 
           // let marker = L.marker([position.coords.latitude, position.coords.longitude].addTo(map)
           // add marker to the map
-          const marker = L.marker([lat, long]).addTo(map);
+          const marker = L.marker([lat, long]).addTo(map)
           // add a pop up to tell the user their approximate location
           marker.bindPopup('Hi Sara, you are somewhere close to this location').openPopup()
         })
