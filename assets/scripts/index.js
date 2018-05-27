@@ -37,17 +37,23 @@ $(() => {
     // `L` is the leaflet library that lets you do thing
     const map = L.map('map').setView([42.35, -71.08], 13) // lat, lon, zoom
 
-    L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png', {
-      attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
-      maxZoom: 17,
-      minZoom: 9
-    }).addTo(map)
+    L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png',
+      {
+        attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
+        maxZoom: 17,
+        minZoom: 9
+      }).addTo(map)
 
+    // import neighborhood data polygons as GeoJSON file
+    // file was converted in QGIS
+    $.getJSON('boston_neighborhoods.geojson', function (data) {
+    // add geoJSON layer to the map
+      L.geoJson(data).addTo(map)
+    })
     // Adds current location using html5
     $('#get-location').click(function (event) {
       addCurrentLocationToMap()
     })
-
     // Make the map clickable
     const popup = L.popup()
     function onMapClick (event) {
