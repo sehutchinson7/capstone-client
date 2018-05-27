@@ -50,6 +50,13 @@ $(() => {
     // add geoJSON layer to the map
       L.geoJson(data).addTo(map)
     })
+
+    // import robbery point data as GeoJSON file
+    // file was converted in QGIS
+    $.getJSON('boston_robberies_clean.geojson', function (data) {
+      // add geoJSON layer to the map
+      L.geoJSON(data).addTo(map)
+    })
     // Adds current location using html5
     $('#get-location').click(function (event) {
       addCurrentLocationToMap()
