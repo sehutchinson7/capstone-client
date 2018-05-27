@@ -1,6 +1,7 @@
 'use strict'
 
 const L = require('leaflet')
+const authEvents = require('./auth/events')
 // const leafletMap = require('leaflet-map')
 
 // use require with a reference to bundle the file and use it in this file
@@ -8,6 +9,10 @@ const L = require('leaflet')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+
+$(() => {
+  authEvents.addHandlers()
+})
 
 $(() => {
   $(document).ready(function () {

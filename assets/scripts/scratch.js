@@ -29,3 +29,20 @@
 // const marker = L.marker([35.59, -82.56]).addTo(map)
 // })
 // })
+
+
+
+const L = require('leaflet')
+const projectApi = require('./events')
+
+// const leafletMap = require('leaflet-map')
+
+// use require with a reference to bundle the file and use it in this file
+// const example = require('./example')
+
+// use require without a reference to ensure a file is bundled
+// require('./example')
+
+$(() => {
+  projectApi.addHandlers()
+})
