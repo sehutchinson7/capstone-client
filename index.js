@@ -9,7 +9,3 @@ require('./assets/scripts/index.js')
 
 // styles
 require('./assets/styles/index.scss')
-
-// data layers
-require('./boston_neighborhoods.geojson')
-require('./boston_robberies_clean.geojson')
