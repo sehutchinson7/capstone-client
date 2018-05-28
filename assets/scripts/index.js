@@ -41,7 +41,7 @@ $(() => {
     // `map` is an element, which is the same as the empty div in the html
     // `L` is the leaflet library that lets you do thing
     const map = L.map('map').setView([42.35, -71.08], 13) // lat, lon, zoom
-
+    // use https to prevent bug that was asking user to "load unsafe scripts"
     L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png',
       {
         attribution: 'Tiles by <a href="https://mapc.org">MAPC</a>, Data by <a href="https://mass.gov/mgis">MassGIS</a>',
