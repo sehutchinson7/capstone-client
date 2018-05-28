@@ -25,6 +25,7 @@
           <div class="row">
             <div class="col-sm-6">
               <h1 class='large-title'>Boston Crime Reporter</h1>
+              <p id="message"></p>
             </div>
             <div class="col-sm-6">
               <form id="sign-out" class="hidden pull-right auth-btn">
@@ -39,12 +40,11 @@
       </nav>
 
       <div class="body-content">
-        <p id="message"></p>
 
         <div class="modal fade" id="modal-auth" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
               <div class="modal-content">
-                <!-- <div class="modal-header">
+                <!--<div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div> -->
                 <div class="modal-body">
@@ -75,10 +75,15 @@
                   </form>
 
                 </div>
+                <div class="modal-footer">
+                  <p class="modal-message pull-left"></p>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+
 
       <!--Auth End-->
       <!--Web Map Start-->
