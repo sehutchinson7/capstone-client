@@ -64,10 +64,6 @@ const addHandlers = function () {
   $('#sign-out').on('submit', onSignOut)
 }
 
-$('.modal').on('hidden.bs.modal', function (e) {
-  $('input[type="email"], input[type="password"], input[type="text"], input[type="date"], input[type="number"], textarea').val('')
-})
-
 module.exports = {
   addHandlers
 }

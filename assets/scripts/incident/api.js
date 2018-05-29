@@ -14,25 +14,28 @@ const createIncident = function (data) {
     data
   })
 }
-// const indexIncident = function (data) {
-//   console.log('in the api request data is:', data)
-//   return $.ajax({
-//     url: config.apiUrl + '/incidents',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
-// const showIncident = function (data) {
-//   return $.ajax({
-//     url: config.apiUrl + '/incidents' + data,
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const getUserIncidents = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/users/' + store.user.id,
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const getAllIncidents = function () {
+  return $.ajax({
+    url: config.apiUrl + `/incidents`,
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const deleteIncident = function (data) {
   return $.ajax({
     url: config.apiUrl + '/incidents/' + data,
@@ -55,8 +58,8 @@ const updateIncident = function (data) {
 }
 module.exports = {
   createIncident,
-  // indexIncident,
-  // showIncident,
+  getUserIncidents,
+  getAllIncidents,
   updateIncident,
   deleteIncident
 }

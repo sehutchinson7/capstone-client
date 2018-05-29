@@ -1,0 +1,11 @@
+<h1> Reported Incidents </h1>
+<p>Current user: {{user.email}}
+</p>
+
+{{#each user.incidents as |user|}}
+<h1 data-id="{{user.id}}"> <small>User: {{user.name}}</small></h1>
+<li>Location: {{user.location}}
+</li>
+{{/each}}
+
+</div>

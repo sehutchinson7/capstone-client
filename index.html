@@ -94,16 +94,7 @@
       <!--Web Map End-->
 
       <!--Start Incident Report Information Here-->
-      <div class="container-forms">
-          <form id="get-all-incident">
-            <input type="submit" value="View All Incidents">
-          </form>
-          <form id="clear-list">
-            <input type="submit" value="Clear List">
-          </form>
-          <form id="get-user-incidents">
-            <input type="submit" value="View My Incidents">
-          </form>
+      <div class="container-forms hidden">
 
         <form id="create-incident">
           <legend>Add Incident to Database</legend>
@@ -133,6 +124,18 @@
           <input require type="integer" name="incident[id]" placeholder="Incident ID">
           <input type="submit" value="Delete">
         </form>
+
+        <div class="content hidden">
+          <form id="get-all-incidents">
+            <input type="submit" value="View All Incidents">
+          </form>
+          <form id="clear-list">
+            <input type="submit" value="Clear List">
+          </form>
+          <form id="user-incidents">
+            <input type="submit" value="View My Incidents">
+          </form>
+        </div>
       </div>
 
       <!--End Section-->

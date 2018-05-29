@@ -56,6 +56,13 @@ const onUpdateIncident = function (event) {
 //     .then(ui.userSurveysSuccess)
 //     .catch(ui)
 // }
+const onGetUserIncidents = function (event) {
+  event.preventDefault()
+  api.getUserIncidents()
+    .then(ui.getUserIncidentsSuccess)
+  // User can switch between "View All" and "View My" without hitting "Clear"
+    .catch(ui.getUserIncidentsFailure)
+}
 
 const addHandlers = function () {
   $('#create-incident').on('submit', onCreateIncident)
@@ -65,7 +72,7 @@ const addHandlers = function () {
   // $('.content').on('submit', '.delete-survey', onDeleteIncident)
   $('#update-incident').on('submit', onUpdateIncident)
   // $('#clear-list').on('click', hideContent)
-  // $('#user-incidents').on('submit', onUserIncidents)
+  $('#user-incidents').on('submit', onGetUserIncidents)
 }
 
 module.exports = {
