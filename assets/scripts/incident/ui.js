@@ -1,9 +1,9 @@
 'use strict'
+const store = require('../store')
 
 // const showIncidentsTemplate = require('../templates/incident-listing.handlebars')
 // const showIncidentTemplate = require('../templates/incident-show.handlebars')
 // const showUserIncidentsTemplate = require('../templates/user-incidents.handlebars')
-//const store = require('../store')
 
 const createIncidentSuccess = function () {
   $('#message').text('Incident created!')
@@ -102,28 +102,28 @@ const createIncidentFailure = function (data) {
 //   setTimeout(() => $('#message').html(''), 2000)
 //   $('form').trigger('reset')
 // }
-// const updateSurveySuccess = function () {
-//   $('#message').text('Survey Updated')
-//   $('#message').css('background-color', '#d5fdd5')
-//   setTimeout(() => $('#message').html(''), 2000)
-//   $('form').trigger('reset')
-// }
-// const updateSurveyFailure = function (data) {
-//   $('#message').text('Failed to update survey')
-//   $('#message').css('background-color', '#ff6666')
-//   setTimeout(() => $('#message').html(''), 2000)
-//   $('form').trigger('reset')
-// }
+const updateIncidentSuccess = function () {
+  $('#message').text('Incident Updated')
+  $('#message').css('background-color', '#d5fdd5')
+  setTimeout(() => $('#message').html(''), 2000)
+  $('form').trigger('reset')
+}
+const updateIncidentFailure = function (data) {
+  $('#message').text('Failed to Update Incident')
+  $('#message').css('background-color', '#ff6666')
+  setTimeout(() => $('#message').html(''), 2000)
+  $('form').trigger('reset')
+}
 module.exports = {
   createIncidentSuccess,
-  createIncidentFailure
+  createIncidentFailure,
+  updateIncidentSuccess,
+  updateIncidentFailure
+  // userSurveysSuccess
   // indexSurveyFailure,
   // indexSurveySuccess,
   // showSurveySuccess,
   // showSurveyFailure,
   // deleteSurveySuccess,
   // deleteSurveyFailure,
-  // updateSurveyFailure,
-  // updateSurveySuccess,
-  // userSurveysSuccess
 }
