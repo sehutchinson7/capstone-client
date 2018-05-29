@@ -55,13 +55,10 @@ const signOutSuccess = function (data) {
   $('#sign-in').removeClass('hidden')
   $('#sign-up').removeClass('hidden')
   $('.content').addClass('hidden')
-  $('.survey-content').addClass('hidden')
   $('#modal-auth').modal('hide')
   $('form').trigger('reset')
   $('#modal-btn').text('Sign up / Sign in')
-  $('.body-content').removeClass('color-change')
-  $('#user-surveys').addClass('hidden')
-  $('#index-survey').addClass('hidden')
+  $('.container-forms').addClass('hidden')
 }
 
 const signOutFailure = function (data) {
