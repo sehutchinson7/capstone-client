@@ -4,6 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const createIncident = function (data) {
+  console.log('in the api request data is:', data)
   return $.ajax({
     url: config.apiUrl + '/incidents',
     method: 'POST',

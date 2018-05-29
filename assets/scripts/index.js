@@ -2,6 +2,7 @@
 
 const L = require('leaflet')
 const authEvents = require('./auth/events')
+const incidentEvents = require('./incident/events')
 // const leafletMap = require('leaflet-map')
 
 // use require with a reference to bundle the file and use it in this file
@@ -12,6 +13,7 @@ const authEvents = require('./auth/events')
 
 $(() => {
   authEvents.addHandlers()
+  incidentEvents.addHandlers()
 })
 
 $(() => {

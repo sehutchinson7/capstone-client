@@ -3,7 +3,7 @@
 // const showIncidentsTemplate = require('../templates/incident-listing.handlebars')
 // const showIncidentTemplate = require('../templates/incident-show.handlebars')
 // const showUserIncidentsTemplate = require('../templates/user-incidents.handlebars')
-// const store = require('../store')
+//const store = require('../store')
 
 const createIncidentSuccess = function () {
   $('#message').text('Incident created!')
@@ -115,8 +115,8 @@ const createIncidentFailure = function (data) {
 //   $('form').trigger('reset')
 // }
 module.exports = {
-  createSurveySuccess,
-  createSurveyFailure
+  createIncidentSuccess,
+  createIncidentFailure
   // indexSurveyFailure,
   // indexSurveySuccess,
   // showSurveySuccess,

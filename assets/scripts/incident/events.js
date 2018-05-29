@@ -11,7 +11,7 @@ const onCreateIncident = function (event) {
   api.createIncident(data)
     .then(ui.createIncidentSuccess)
     .catch(ui.createIncidentFailure)
-  // console.log('working')
+  console.log('working')
 }
 
 const onIndexIncident = function () {
