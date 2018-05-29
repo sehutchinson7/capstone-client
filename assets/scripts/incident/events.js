@@ -28,15 +28,15 @@ const onCreateIncident = function (event) {
 //     .then(ui.showIncidentSuccess)
 //     .catch(ui.showIncidentFailure)
 // }
-// const onDeleteIncident = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   if (confirm('Are you sure you want to delete this incident')) {
-//     api.deleteSurvey(data.incident.id)
-//       .then(ui.deleteIncidentSuccess)
-//       .catch(ui.deleteIncidentFailure)
-//   }
-// }
+const onDeleteIncident = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  if (confirm('Are you sure you want to delete this incident')) {
+    api.deleteIncident(data.incident.id)
+      .then(ui.deleteIncidentSuccess)
+      .catch(ui.deleteIncidentFailure)
+  }
+}
 const onUpdateIncident = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -61,7 +61,7 @@ const addHandlers = function () {
   $('#create-incident').on('submit', onCreateIncident)
   // $('#index-incident').on('submit', onIndexIncident)
   // $('#show-incident').on('submit', onShowIncident)
-  // $('#delete-survey').on('submit', onDeleteSurvey)
+  $('#delete-incident').on('submit', onDeleteIncident)
   // $('.content').on('submit', '.delete-survey', onDeleteIncident)
   $('#update-incident').on('submit', onUpdateIncident)
   // $('#clear-list').on('click', hideContent)

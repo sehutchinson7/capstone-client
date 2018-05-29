@@ -33,15 +33,15 @@ const createIncident = function (data) {
 //     }
 //   })
 // }
-// const deleteIncident = function (data) {
-//   return $.ajax({
-//     url: config.apiUrl + '/incidents/' + data,
-//     method: 'DELETE',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const deleteIncident = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/incidents/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 const updateIncident = function (data) {
   console.log('upade data is', data)
   return $.ajax({
@@ -57,6 +57,6 @@ module.exports = {
   createIncident,
   // indexIncident,
   // showIncident,
-  updateIncident
-  // deleteIncident
+  updateIncident,
+  deleteIncident
 }

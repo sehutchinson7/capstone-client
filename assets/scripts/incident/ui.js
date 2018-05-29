@@ -89,19 +89,19 @@ const createIncidentFailure = function (data) {
 //   setTimeout(() => $('#message').html(''), 2000)
 //   $('form').trigger('reset')
 // }
-// const deleteSurveySuccess = function () {
-//   $('#message').text('Survey Deleted')
-//   $('#message').css('background-color', '#d5fdd5')
-//   setTimeout(() => $('#message').html(''), 2000)
-//   $('form').trigger('reset')
-//   $('#user-surveys-btn').click()
-// }
-// const deleteSurveyFailure = function (data) {
-//   $('#message').text('Failed to delete survey')
-//   $('#message').css('background-color', '#ff6666')
-//   setTimeout(() => $('#message').html(''), 2000)
-//   $('form').trigger('reset')
-// }
+const deleteIncidentSuccess = function () {
+  $('#message').text('Incident Deleted')
+  $('#message').css('background-color', '#d5fdd5')
+  setTimeout(() => $('#message').html(''), 2000)
+  $('form').trigger('reset')
+  // $('#user-surveys-btn').click()
+}
+const deleteIncidentFailure = function (data) {
+  $('#message').text('Failed to delete incident')
+  $('#message').css('background-color', '#ff6666')
+  setTimeout(() => $('#message').html(''), 2000)
+  $('form').trigger('reset')
+}
 const updateIncidentSuccess = function () {
   $('#message').text('Incident Updated')
   $('#message').css('background-color', '#d5fdd5')
@@ -118,12 +118,12 @@ module.exports = {
   createIncidentSuccess,
   createIncidentFailure,
   updateIncidentSuccess,
-  updateIncidentFailure
+  updateIncidentFailure,
+  deleteIncidentSuccess,
+  deleteIncidentFailure
   // userSurveysSuccess
   // indexSurveyFailure,
   // indexSurveySuccess,
   // showSurveySuccess,
-  // showSurveyFailure,
-  // deleteSurveySuccess,
-  // deleteSurveyFailure,
+  // showSurveyFailure
 }
