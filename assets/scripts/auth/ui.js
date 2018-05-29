@@ -29,7 +29,7 @@ const signInSuccess = function (data) { // represents what the api is sending ba
   $('#modal-auth').modal('hide')
   $('.survey-content').removeClass('hidden')
   $('#modal-btn').text('Change Password')
-  // $('.content').removeClass('hidden')
+  $('.content').removeClass('hidden')
   store.user = data.user
   $('form').trigger('reset')
   $('.body-content').addClass('color-change')

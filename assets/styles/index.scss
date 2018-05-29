@@ -1,16 +1,39 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-// #mapid {
-//   height: 180px;
-// }
-
 #map {
-  width: 900px;
+  width: 1000px;
   height: 500px;
+  border: 2px solid black;
 }
 
 .modal-message {
   text-align: center;
   text-emphasis: 80px;
+}
+
+h3 {
+  color:red;
+}
+
+body {
+  padding: 80px;
+}
+
+.btn-default {
+  margin-top: 30px;
+}
+
+.container-forms {
+  padding: 20px;
+  height: 280px;
+  border: 2px solid black;
+  width: 1000px;
+  text-align: left;
+  overflow: scroll;
+  background-color: #c8c8c8;
+}
+
+body {
+  background-color: black;
 }

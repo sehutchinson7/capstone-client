@@ -10,14 +10,13 @@
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
       integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
       crossorigin=""/>
-
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
       integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
       crossorigin=""></script>
 
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
       <!--Auth Start-->
@@ -25,7 +24,8 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-6">
-              <h1 class='large-title'>Boston Crime Reporter</h1>
+              <h3 class='large-title'>Boston Crime Reporter</h3>
+                <button id="get-location">Click here to get your location</button>
               <p id="message"></p>
             </div>
             <div class="col-sm-6">
@@ -39,7 +39,6 @@
           </div>
         </div>
       </nav>
-
       <div class="body-content">
 
         <div class="modal fade" id="modal-auth" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -84,19 +83,58 @@
               </div>
             </div>
           </div>
-
-
       <!--Auth End-->
       <!--Web Map Start-->
       <div class="container">
-        <h1>Boston Crime Reporting</h1>
       </div>
 
       <div id="map"></div>
 
-      <div class="container">
-        <button id="get-location">Click here to get your location</button>
-      </div>
+
       <!--Web Map End-->
+
+      <!--Start Incident Report Information Here-->
+      <div class="container-forms">
+          <form id="show-survey">
+            <input type="submit" value="View All Incidents">
+          </form>
+          <form id="clear-list">
+            <input type="submit" value="Clear List">
+          </form>
+          <form id="get-user-incidents">
+            <input type="submit" value="View My Incidents">
+          </form>
+
+        <form id="create-incident">
+          <legend>Add Incident to Database</legend>
+          <p>Please enter information related to the incident below.</p>
+          <input required type="text" name="incident[name]" placeholder="Your Name" required>
+          <input require type="text" name="incident[location]" placeholder="Incident Location" required>
+          <input require type="date" name="incident[date]" placeholder="Date of Incident" required>
+          <input require type="text" name="incident[description]" placeholder="Description" required>
+          <input require type="text" name="incident[robbery_type]" placeholder="Type of Robbery" required>
+          <input type="submit" value="Add Incident">
+        </form>
+
+
+        <form id="update-incident">
+          <legend>Update Existing Incident to Database </legend>
+          <input required type="text" name="incident[name]" placeholder="Your Name" required>
+          <input require type="text" name="incident[location]" placeholder="Incident Location" required>
+          <input require type="date" name="incident[date]" placeholder="Date of Incident" required>
+          <input require type="text" name="incident[description]" placeholder="Description" required>
+          <input require type="text" name="incident[robbery_type]" placeholder="Type of Robbery" required>
+          <input require type="integer" name="incident[id]" placeholder="Incident ID" required>
+          <input type="submit" value="Update">
+        </form>
+
+        <form id="delete-incident">
+          <legend>Delete Existing Incident</legend>
+          <input require type="integer" name="incident[id]" placeholder="Incident ID">
+          <input type="submit" value="Delete">
+        </form>
+      </div>
+
+      <!--End Section-->
     </body>
 </html>
