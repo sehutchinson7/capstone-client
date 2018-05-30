@@ -3,6 +3,8 @@
 const L = require('leaflet')
 const authEvents = require('./auth/events')
 const incidentEvents = require('./incident/events')
+const bostonNeighborhoods = 'public/boston_neighborhoods.geojson'
+const bostonRobberies = 'public/boston_robberies_clean.geojson'
 // const leafletMap = require('leaflet-map')
 
 // use require with a reference to bundle the file and use it in this file
@@ -14,6 +16,8 @@ const incidentEvents = require('./incident/events')
 $(() => {
   authEvents.addHandlers()
   incidentEvents.addHandlers()
+  bostonNeighborhoods.addHandlers()
+  bostonRobberies.addHandlers()
 })
 
 $(() => {
@@ -53,14 +57,14 @@ $(() => {
 
     // import neighborhood data polygons as GeoJSON file
     // file was converted in QGIS
-    $.getJSON('boston_neighborhoods.geojson', function (data) {
+    $.getJSON(bostonNeighborhoods, function (data) {
     // add geoJSON layer to the map
       L.geoJson(data).addTo(map)
     })
 
     // import robbery point data as GeoJSON file
     // file was converted in QGIS
-    $.getJSON('boston_robberies_clean.geojson', function (data) {
+    $.getJSON(bostonRobberies, function (data) {
       // add geoJSON layer to the map
       L.geoJSON(data).addTo(map)
     })
