@@ -104,14 +104,13 @@
           <input require type="text" name="incident[location]" placeholder="Incident Location" required>
           <input require type="date" name="incident[date]" placeholder="Date of Incident" required>
           <input require type="text" name="incident[description]" placeholder="Description" required>
-          <input require type="text" name="incident[robbery_type]" placeholder="Type of Robbery" required>
-            <select>
-              <option value="audi">ROBBERY - BANK</option>
-              <option value="audi">ROBBERY - CAR JACKING</option>
-              <option value="volvo">ROBBERY - COMMERCIAL</option>
-              <option value="saab">ROBBERY - HOME INVASION</option>
-              <option value="opel">ROBBERY - OTHER</option>
-              <option value="audi">ROBBERY - STREET</option>
+            <select name="incident[robbery_type]">
+              <option value="ROBBERY - BANK">ROBBERY - BANK</option>
+              <option value="ROBBERY - CAR JACKING">ROBBERY - CAR JACKING</option>
+              <option value="ROBBERY - COMMERCIAL">ROBBERY - COMMERCIAL</option>
+              <option value="ROBBERY - HOME INVASION">HOME - INVASION</option>
+              <option value="ROBBERY - OTHER">ROBBERY - OTHER</option>
+              <option value="ROBBERY - OTHER">ROBBERY - STREET</option>
             </select>
           <input type="submit" value="Add Incident">
         </form>
@@ -123,8 +122,14 @@
           <input require type="text" name="incident[location]" placeholder="Incident Location" required>
           <input require type="date" name="incident[date]" placeholder="Date of Incident" required>
           <input require type="text" name="incident[description]" placeholder="Description" required>
-          <input require type="text" name="incident[robbery_type]" placeholder="Type of Robbery" required>
-          <input require type="integer" name="incident[id]" placeholder="Incident ID" required>
+          <select name="incident[robbery_type]">
+            <option value="ROBBERY - BANK">ROBBERY - BANK</option>
+            <option value="ROBBERY - CAR JACKING">ROBBERY - CAR JACKING</option>
+            <option value="ROBBERY - COMMERCIAL">ROBBERY - COMMERCIAL</option>
+            <option value="ROBBERY - HOME INVASION">HOME - INVASION</option>
+            <option value="ROBBERY - OTHER">ROBBERY - OTHER</option>
+            <option value="ROBBERY - OTHER">ROBBERY - STREET</option>
+          </select>
           <input type="submit" value="Update">
         </form>
 
