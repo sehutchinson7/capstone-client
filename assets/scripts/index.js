@@ -67,6 +67,8 @@ $(() => {
     // Adds current location using html5
     $('#get-location').click(function (event) {
       addCurrentLocationToMap()
+      $('#location-message').removeClass('hidden')
+      setTimeout(() => $('#location-message').html(''), 3000)
     })
     // Make the map clickable
     const popup = L.popup()
