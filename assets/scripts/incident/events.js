@@ -58,6 +58,13 @@ const onGetUserIncidents = function (event) {
     .catch(ui.getUserIncidentsFailure)
 }
 
+const onClearList = function () {
+  event.preventDefault()
+  $('.handlebars').hide() // Clears the  get-all list when user clicks clear button
+  // $('.handlebars-mod').hide() // Clears the user list when user clicks clear button
+  $('#clear-list').addClass('hidden') // Hide clear button after user clears list
+}
+
 const onGetAllIncidents = function (event) {
   event.preventDefault()
   api.getAllIncidents()
@@ -75,6 +82,7 @@ const addHandlers = function () {
   // $('#clear-list').on('click', hideContent)
   $('#user-incidents').on('submit', onGetUserIncidents)
   $('#all-incidents').on('submit', onGetAllIncidents)
+  $('#clear-list').on('submit', onClearList)
 }
 
 module.exports = {

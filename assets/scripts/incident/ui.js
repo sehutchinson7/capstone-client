@@ -52,7 +52,7 @@ const getUserIncidentsSuccess = function (data) {
   const showUserIncidentsHtml = showUserIncidentsTemplate({
     user: data.user
   })
-  $('.handlebars-mod').empty() // Prevents the list from duplicating
+  $('.handlebars').empty() // Prevents the list from duplicating
   $('.content').append(showUserIncidentsHtml)
   $('#clear-list').removeClass('hidden') // Show clear button when user clicks "View My Incidents"
   if (data.incidents && data.incidents.length === 0) {
@@ -71,7 +71,7 @@ const getAllIncidentsSuccess = function (data) {
   const showAllIncidentsHtml = showAllIncidentsTemplate({
     incidents: data.incidents
   })
-  $('.handlebars-mod').empty() // Prevents the list from duplicating
+  $('.handlebars').empty() // Prevents the list from duplicating
   $('.content').append(showAllIncidentsHtml)
   $('#clear-list').removeClass('hidden') // Show clear button when user clicks "View My Incidents"
   if (data.incidents && data.incidents.length === 0) {
