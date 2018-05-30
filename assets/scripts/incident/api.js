@@ -26,6 +26,7 @@ const getUserIncidents = function (data) {
 }
 
 const getAllIncidents = function () {
+  console.log('sent request')
   return $.ajax({
     url: config.apiUrl + `/incidents`,
     method: 'GET',

@@ -50,18 +50,19 @@ const onUpdateIncident = function (event) {
 //   $('.content').addClass('hidden')
 // }
 
-// const onUserIncidents = function () {
-//   event.preventDefault()
-//   api.indexSurvey()
-//     .then(ui.userSurveysSuccess)
-//     .catch(ui)
-// }
 const onGetUserIncidents = function (event) {
   event.preventDefault()
   api.getUserIncidents()
     .then(ui.getUserIncidentsSuccess)
   // User can switch between "View All" and "View My" without hitting "Clear"
     .catch(ui.getUserIncidentsFailure)
+}
+
+const onGetAllIncidents = function (event) {
+  event.preventDefault()
+  api.getAllIncidents()
+    .then(ui.getAllIncidentsSuccess)
+    .catch(ui.getAllIncidentsFailure)
 }
 
 const addHandlers = function () {
@@ -73,6 +74,7 @@ const addHandlers = function () {
   $('#update-incident').on('submit', onUpdateIncident)
   // $('#clear-list').on('click', hideContent)
   $('#user-incidents').on('submit', onGetUserIncidents)
+  $('#all-incidents').on('submit', onGetAllIncidents)
 }
 
 module.exports = {

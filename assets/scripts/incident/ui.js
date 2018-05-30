@@ -1,6 +1,6 @@
 'use strict'
 const showUserIncidentsTemplate = require('../templates/user-incidents.handlebars')
-
+const showAllIncidentsTemplate = require('../templates/get-all-incidents.handlebars')
 // const showIncidentsTemplate = require('../templates/incident-listing.handlebars')
 // const showIncidentTemplate = require('../templates/incident-show.handlebars')
 // const showUserIncidentsTemplate = require('../templates/user-incidents.handlebars')
@@ -56,13 +56,32 @@ const getUserIncidentsSuccess = function (data) {
   $('.content').append(showUserIncidentsHtml)
   $('#clear-list').removeClass('hidden') // Show clear button when user clicks "View My Incidents"
   if (data.incidents && data.incidents.length === 0) {
-    $('#update-message').text('There are currently no incidents in the database.')
+    $('#update-message').text('You have not added any in the database. You can add one by filling out the form above.')
     $('#update-message').css('background-color', '#ff6666')
     setTimeout(() => {
       $('#update-message').text('')
     }, 5000)
   } else {
-    $('#message').text('Successfully retrieved incidents')
+    $('#message').text('Successfully retrieved your incidents')
+    $('#message').css('background-color', '#d5fdd5')
+  }
+}
+
+const getAllIncidentsSuccess = function (data) {
+  const showAllIncidentsHtml = showAllIncidentsTemplate({
+    incidents: data.incidents
+  })
+  $('.handlebars-mod').empty() // Prevents the list from duplicating
+  $('.content').append(showAllIncidentsHtml)
+  $('#clear-list').removeClass('hidden') // Show clear button when user clicks "View My Incidents"
+  if (data.incidents && data.incidents.length === 0) {
+    $('#update-message').text('There are currently no incidents in the database. You can add one by filling out the form above')
+    $('#update-message').css('background-color', '#ff6666')
+    setTimeout(() => {
+      $('#update-message').text('')
+    }, 5000)
+  } else {
+    $('#message').text('Successfully retrieved all incidents')
     $('#message').css('background-color', '#d5fdd5')
   }
 }
@@ -74,5 +93,6 @@ module.exports = {
   updateIncidentFailure,
   deleteIncidentSuccess,
   deleteIncidentFailure,
-  getUserIncidentsSuccess
+  getUserIncidentsSuccess,
+  getAllIncidentsSuccess
 }

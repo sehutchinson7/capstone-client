@@ -1,0 +1,16 @@
+<div class="handlebars">
+
+<h1>All Reported Incidents </h1>
+<p>User: {{user.email}}</p>
+<!-- <h1 data-id="{{incident._id}}"> <small>Name: {{incident.name}}</small></h1> -->
+{{#each incidents as |incident|}}
+<h1 data-id="{{incident.id}}"> <small>Name: {{incident.name}}</small></h1>
+<li>Incident ID: {{incident.id}}</li>
+<li>Robbery Location: {{incident.location}}</li>
+<li>Date: {{incident.date}}</li>
+<li>Description: {{incident.description}}</li>
+<li>Robbery Type: {{incident.robbery_type}}</li>
+
+{{/each}}
+
+</div>
