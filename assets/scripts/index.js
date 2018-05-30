@@ -16,8 +16,6 @@ const bostonRobberies = 'public/boston_robberies_clean.geojson'
 $(() => {
   authEvents.addHandlers()
   incidentEvents.addHandlers()
-  bostonNeighborhoods.addHandlers()
-  bostonRobberies.addHandlers()
 })
 
 $(() => {
