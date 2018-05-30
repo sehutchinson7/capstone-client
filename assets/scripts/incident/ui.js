@@ -64,6 +64,7 @@ const getUserIncidentsSuccess = function (data) {
   } else {
     $('#message').text('Successfully retrieved your incidents')
     $('#message').css('background-color', '#d5fdd5')
+    setTimeout(() => $('#message').html(''), 2000)
   }
 }
 
@@ -83,6 +84,7 @@ const getAllIncidentsSuccess = function (data) {
   } else {
     $('#message').text('Successfully retrieved all incidents')
     $('#message').css('background-color', '#d5fdd5')
+    setTimeout(() => $('#message').html(''), 2000)
   }
 }
 
