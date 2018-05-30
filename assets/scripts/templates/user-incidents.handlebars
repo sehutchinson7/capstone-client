@@ -1,11 +1,16 @@
-<h1> Reported Incidents </h1>
-<p>Current user: {{user.email}}
-</p>
+<div class="handlebars">
 
+<h1>Reported Incidents </h1>
+<p>Current user: {{user.email}}</p>
+<!-- <h1 data-id="{{incident._id}}"> <small>Name: {{incident.name}}</small></h1> -->
 {{#each user.incidents as |user|}}
-<h1 data-id="{{user.id}}"> <small>User: {{user.name}}</small></h1>
-<li>Location: {{user.location}}
-</li>
+<h1 data-id="{{user.id}}"> <small>Name: {{user.name}}</small></h1>
+<li>Incident ID: {{user.id}}</li>
+<li>Robbery Location: {{user.location}}</li>
+<li>Date: {{user.date}}</li>
+<li>Description: {{user.description}}</li>
+<li>Robbery Type: {{user.robbery_type}}</li>
+
 {{/each}}
 
 </div>
