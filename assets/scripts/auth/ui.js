@@ -62,6 +62,7 @@ const signOutSuccess = function (data) {
   $('#modal-btn').text('Sign up / Sign in')
   $('.container-forms').addClass('hidden')
   $('#home-message').show()
+  $('.handlebars').addClass('hidden')
 }
 
 const signOutFailure = function (data) {
@@ -70,6 +71,7 @@ const signOutFailure = function (data) {
   $('#message').css('background-color', '#F2DEDE')
   setTimeout(() => $('#message').text(''), 2000)
   $('form').trigger('reset')
+  $('.handlebars').addClass('hidden')
 }
 
 const changePassSuccess = function (data) {
