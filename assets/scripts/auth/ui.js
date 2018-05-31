@@ -36,6 +36,8 @@ const signInSuccess = function (data) { // represents what the api is sending ba
   $('.body-content').addClass('color-change')
   $('#user-surveys').removeClass('hidden')
   $('#index-survey').removeClass('hidden')
+  $('#home-message').hide()
+  $('#home-message-placeholder').removeClass('hidden')
 }
 
 const signInFailure = function (data) {
@@ -59,6 +61,7 @@ const signOutSuccess = function (data) {
   $('form').trigger('reset')
   $('#modal-btn').text('Sign up / Sign in')
   $('.container-forms').addClass('hidden')
+  $('#home-message').show()
 }
 
 const signOutFailure = function (data) {
