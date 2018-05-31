@@ -61,3 +61,8 @@ p#location-message {
 #col-sm-6 {
   padding-top: -30px;
 }
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background-color: #CCFFCC;
+}

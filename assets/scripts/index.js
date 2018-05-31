@@ -33,9 +33,13 @@ $(() => {
 
           // let marker = L.marker([position.coords.latitude, position.coords.longitude].addTo(map)
           // add marker to the map
-          const circle = L.circle([lat, long]).addTo(map)
+          const yodaIcon = L.icon({
+            iconUrl: 'yoda.png',
+            iconSize: [50, 40]
+          })
+          const yodaMarker = L.marker([lat, long], {icon: yodaIcon}).addTo(map)
           // add a pop up to tell the user their approximate location
-          circle.bindPopup('Hi Sara, you are somewhere close to this location').openPopup()
+          yodaMarker.bindPopup('Somewhere close to this location, you are. Click me to zoom to your location. Click the map to find coordinates.').openPopup()
         })
       // if geolocation is not supported
       } else {
