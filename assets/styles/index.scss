@@ -62,7 +62,15 @@ p#location-message {
   padding-top: -30px;
 }
 
-.leaflet-popup-content-wrapper,
-.leaflet-popup-tip {
+// .leaflet-popup-content-wrapper,
+// .leaflet-popup-tip {
+//   background-color: #CCFFCC;
+// }
+
+.leaflet-popup-content-wrapper {
+  padding: 0 20px 0 0;
   background-color: #CCFFCC;
+  //margin-top:400px;
+  //background: rgb(111, 51, 51);
+  //box-shadow: 0 3px 14px rgba(0,0,0,0.4);
 }
