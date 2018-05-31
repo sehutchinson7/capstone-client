@@ -10,6 +10,7 @@ const onCreateIncident = function (event) {
   const data = getFormFields(event.target)
   api.createIncident(data)
     .then(ui.createIncidentSuccess)
+    .then(onClearList())
     .catch(ui.createIncidentFailure)
   console.log('working')
 }
@@ -34,6 +35,7 @@ const onDeleteIncident = function (event) {
   if (confirm('Are you sure you want to delete this incident')) {
     api.deleteIncident(data.incident.id)
       .then(ui.deleteIncidentSuccess)
+      .then(onClearList())
       .catch(ui.deleteIncidentFailure)
   }
 }
@@ -42,6 +44,7 @@ const onUpdateIncident = function (event) {
   const data = getFormFields(event.target)
   api.updateIncident(data)
     .then(ui.updateIncidentSuccess)
+    .then(onClearList())
     .catch(ui.updateIncidentFailure)
   console.log('working')
 }
@@ -55,6 +58,7 @@ const onGetUserIncidents = function (event) {
   api.getUserIncidents()
     .then(ui.getUserIncidentsSuccess)
   // User can switch between "View All" and "View My" without hitting "Clear"
+    .then(onClearList())
     .catch(ui.getUserIncidentsFailure)
 }
 
@@ -69,6 +73,7 @@ const onGetAllIncidents = function (event) {
   event.preventDefault()
   api.getAllIncidents()
     .then(ui.getAllIncidentsSuccess)
+    .then(onClearList())
     .catch(ui.getAllIncidentsFailure)
 }
 

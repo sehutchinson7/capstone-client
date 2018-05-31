@@ -55,11 +55,11 @@ const getUserIncidentsSuccess = function (data) {
   $('.handlebars').empty() // Prevents the list from duplicating
   $('.content').append(showUserIncidentsHtml)
   $('#clear-list').removeClass('hidden') // Show clear button when user clicks "View My Incidents"
-  if (data.incidents && data.incidents.length === 0) {
-    $('#update-message').text('You have not added any in the database. You can add one by filling out the form above.')
-    $('#update-message').css('background-color', '#ff6666')
+  if (data.user.incidents && data.user.incidents.length === 0) {
+    $('#message').text('You have not made any reports yet. You can add one by filling out the forms above.')
+    $('#message').css('background-color', '#ff6666')
     setTimeout(() => {
-      $('#update-message').text('')
+      $('#message').text('')
     }, 5000)
   } else {
     $('#message').text('Successfully retrieved your incidents')
@@ -76,10 +76,10 @@ const getAllIncidentsSuccess = function (data) {
   $('.content').append(showAllIncidentsHtml)
   $('#clear-list').removeClass('hidden') // Show clear button when user clicks "View My Incidents"
   if (data.incidents && data.incidents.length === 0) {
-    $('#update-message').text('There are currently no incidents in the database. You can add one by filling out the form above')
-    $('#update-message').css('background-color', '#ff6666')
+    $('#message').text('There are currently no incidents in the database. You can add one by filling out the form above')
+    $('#message').css('background-color', '#ff6666')
     setTimeout(() => {
-      $('#update-message').text('')
+      $('#message').text('')
     }, 5000)
   } else {
     $('#message').text('Successfully retrieved all incidents')
