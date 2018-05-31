@@ -67,11 +67,19 @@ $(() => {
     }
     map.on('click', onMapClick)
 
+    const geojsonMarkerOptions = {
+      fillColor: '#ff0000',
+      color: '#000000',
+      weight: 1,
+      opacity: 1,
+      fillOpacity: 0.8
+    }
+
     $.getJSON(bostonRobberies, function (data) {
       L.geoJson(data, {
         pointToLayer: function (feature, latlng) {
-          const circle = L.circle(latlng).addTo(map)
-          circle.bindPopup(feature.properties.Location + '<br/>' + feature.properties.STREET + '<br/>' + feature.properties.OFFENSE_DESCRIPTION + '<br/>' + feature.properties.OCCURRED_ON_DATE)
+          const circle = L.circle(latlng, geojsonMarkerOptions).addTo(map)
+          circle.bindPopup('Incident Information:' + '<br/>' + feature.properties.Location + '<br/>' + feature.properties.STREET + '<br/>' + feature.properties.OFFENSE_DESCRIPTION + '<br/>' + feature.properties.OCCURRED_ON_DATE)
           return circle
         }
       })
