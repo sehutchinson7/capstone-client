@@ -35,7 +35,7 @@ $(() => {
           // let marker = L.marker([position.coords.latitude, position.coords.longitude].addTo(map)
           // add marker to the map
           const yodaIcon = L.icon({
-            iconUrl: yodaIconPath,
+            iconUrl: 'https://sehutchinson7.github.io/capstone-client/public/yoda.png',
             iconSize: [50, 40]
           })
           const yodaMarker = L.marker([lat, long], {icon: yodaIcon}).addTo(map)
