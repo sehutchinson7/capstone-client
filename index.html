@@ -117,7 +117,7 @@
 
         <form id="update-incident">
           <legend>Update Existing Incident to Database </legend>
-          <p>Enter incident information below. You cannot update or delete another person's report.</p>
+          <p>Enter incident information below using the ID. To find the ID click the "View My Incidents" button below. You cannot update or delete another person's report.</p>
           <input required type="text" name="incident[name]" placeholder="Your Name" required>
           <input require type="text" name="incident[location]" placeholder="Incident Location" required>
           <input require type="date" name="incident[date]" placeholder="Date of Incident" required>
@@ -130,12 +130,13 @@
             <option value="ROBBERY - OTHER">ROBBERY - OTHER</option>
             <option value="ROBBERY - OTHER">ROBBERY - STREET</option>
           </select>
+          <input require type="integer" name="incident[id]" placeholder="Incident ID" required>
           <input type="submit" value="Update">
         </form>
 
         <form id="delete-incident">
           <legend>Delete Existing Incident</legend>
-          <p>Delete one of your reports using the incident ID. To find the ID click the "View My Incidents" button below.</p>
+          <p>Delete one of your reports using the incident ID.</p>
           <input require type="integer" name="incident[id]" placeholder="Incident ID">
           <input type="submit" value="Delete">
         </form>
