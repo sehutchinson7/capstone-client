@@ -42,7 +42,7 @@ $(() => {
           const pos = map.latLngToLayerPoint(yodaMarker.getLatLng()).round()
           yodaMarker.setZIndexOffset(100 - pos.y)
           // add a pop up to tell the user their approximate location
-          yodaMarker.bindPopup('Somewhere close to this location, you are. Double lick me to zoom here. Click the map to find coordinates.').openPopup()
+          yodaMarker.bindPopup('Somewhere close to this location, you are. Double click me to zoom here. Click the map to find coordinates.').openPopup()
         })
       // if geolocation is not supported
       } else {
