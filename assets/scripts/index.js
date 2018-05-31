@@ -33,9 +33,9 @@ $(() => {
 
           // let marker = L.marker([position.coords.latitude, position.coords.longitude].addTo(map)
           // add marker to the map
-          const marker = L.marker([lat, long]).addTo(map)
+          const circle = L.circle([lat, long]).addTo(map)
           // add a pop up to tell the user their approximate location
-          marker.bindPopup('Hi Sara, you are somewhere close to this location').openPopup()
+          circle.bindPopup('Hi Sara, you are somewhere close to this location').openPopup()
         })
       // if geolocation is not supported
       } else {
@@ -53,26 +53,11 @@ $(() => {
         minZoom: 9
       }).addTo(map)
 
-    // import neighborhood data polygons as GeoJSON file
-    // file was converted in QGIS
-    $.getJSON(bostonNeighborhoods, function (data) {
-    // add geoJSON layer to the map
-      L.geoJson(data).addTo(map)
-    })
-
-    // import robbery point data as GeoJSON file
-    // file was converted in QGIS
-    $.getJSON(bostonRobberies, function (data) {
-      // add geoJSON layer to the map
-      L.geoJSON(data).addTo(map)
-    })
-    // Adds current location using html5
     $('#get-location').click(function (event) {
       addCurrentLocationToMap()
       $('#location-message').removeClass('hidden')
       setTimeout(() => $('#location-message').html(''), 3000)
     })
-    // Make the map clickable
     const popup = L.popup()
     function onMapClick (event) {
       popup
@@ -81,5 +66,15 @@ $(() => {
         .openOn(map)
     }
     map.on('click', onMapClick)
+
+    $.getJSON(bostonRobberies, function (data) {
+      L.geoJson(data, {
+        pointToLayer: function (feature, latlng) {
+          const circle = L.circle(latlng).addTo(map)
+          circle.bindPopup(feature.properties.Location + '<br/>' + feature.properties.STREET)
+          return circle
+        }
+      })
+    }).addTo(map)
   })
 })
