@@ -5,7 +5,7 @@ const authEvents = require('./auth/events')
 const incidentEvents = require('./incident/events')
 // const bostonNeighborhoods = 'public/boston_neighborhoods.geojson'
 const bostonRobberies = 'public/boston_robberies_clean.geojson'
-//const yodaIcon = 'public/yoda.png'
+const yodaIconPath = 'public/yoda.png'
 // const leafletMap = require('leaflet-map')
 
 // use require with a reference to bundle the file and use it in this file
@@ -35,7 +35,7 @@ $(() => {
           // let marker = L.marker([position.coords.latitude, position.coords.longitude].addTo(map)
           // add marker to the map
           const yodaIcon = L.icon({
-            iconUrl: './yoda.png',
+            iconUrl: yodaIconPath,
             iconSize: [50, 40]
           })
           const yodaMarker = L.marker([lat, long], {icon: yodaIcon}).addTo(map)
