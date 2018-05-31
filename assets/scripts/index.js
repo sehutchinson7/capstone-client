@@ -71,7 +71,7 @@ $(() => {
       L.geoJson(data, {
         pointToLayer: function (feature, latlng) {
           const circle = L.circle(latlng).addTo(map)
-          circle.bindPopup(feature.properties.Location + '<br/>' + feature.properties.STREET)
+          circle.bindPopup(feature.properties.Location + '<br/>' + feature.properties.STREET + '<br/>' + feature.properties.OFFENSE_DESCRIPTION + '<br/>' + feature.properties.OCCURRED_ON_DATE)
           return circle
         }
       })
