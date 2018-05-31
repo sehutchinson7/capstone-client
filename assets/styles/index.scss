@@ -5,6 +5,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   width: 1000px;
   height: 500px;
   border: 2px solid black;
+  margin-top: 40px;
 }
 
 .modal-message {
@@ -20,9 +21,9 @@ body {
   padding: 80px;
 }
 
-.btn-default {
-  margin-top: 30px;
-}
+// .btn-default {
+//   margin-top: 30px;
+// }
 
 .container-forms {
   padding: 20px;
@@ -38,6 +39,16 @@ body {
   background-color: black;
 }
 
+.auth-div {
+  margin-top: 18px;
+
+}
+
 p#location-message {
   color: red;
+}
+
+#home-message {
+  color: red;
+  float: right;
 }

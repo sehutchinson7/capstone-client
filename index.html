@@ -28,13 +28,18 @@
               <p id="message"></p>
               <p id="location-message" class="hidden">Finding your location...</p>
             </div>
-            <div class="col-sm-6">
-              <form id="sign-out" class="hidden pull-right auth-btn">
-                <fieldset>
-                  <input type="submit" value="Sign out" class="btn btn-default">
-                </fieldset>
-              </form>
-              <button type="button" class="btn btn-default pull-right auth-btn" id='modal-btn'  data-toggle="modal" data-target="#modal-auth">Sign up/Sign in</button>
+            <div class="col-sm-6 auth-div">
+              <div class="row">
+                <p id="home-message"> Please Sign Up or Sign In with your Credentials</p>
+              </div>
+              <div class="row">
+                <form id="sign-out" class="hidden pull-right auth-btn">
+                  <fieldset>
+                    <input type="submit" value="Sign out" class="btn btn-default">
+                  </fieldset>
+                </form>
+                <button type="button" class="btn btn-default pull-right auth-btn" id='modal-btn'  data-toggle="modal" data-target="#modal-auth">Sign up/Sign in</button>
+              </div>
             </div>
           </div>
         </div>
