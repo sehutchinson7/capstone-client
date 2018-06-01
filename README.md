@@ -5,6 +5,7 @@
 <p>Learn more about how Rails was used to power the back-end of the application.<br>
 Back-end repo:
 https://github.com/sehutchinson7/capstone-api
+<p>Heroku server (supposed say "the page you are looking for doesn't exist"): https://capstone-project-api.herokuapp.com/</p>
 <p>Data source: https://data.boston.gov/dataset/crime-incident-reports-august-2015-to-date-source-new-system
 </p>
 <h3> Background: </h3>
@@ -54,5 +55,5 @@ The skeleton for the user crime report forms was created in html and style with 
 <h3> Next Steps: </h3>
 <p>Next steps in designing the application will focus on the cartography for the webmap. The next version will include a legend and symbolize the point by robbery type.  Additionally, Leaflet provides the option of creating a Controller to allow for greater user interaction with the map, clicking layers on and off etc. These techniques will be explored in greater depth in the future. Another option would be to assess vulnerability by creating hot spot maps based on clustered point data.
 
-The developer can be contacted at: sara@hutchinsongis.com
+For inquires, contact: sara@hutchinsongis.com
 </ul>
