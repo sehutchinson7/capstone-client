@@ -4,7 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const createIncident = function (data) {
-  console.log('in the api request data is:', data)
+  // console.log('in the api request data is:', data)
   return $.ajax({
     url: config.apiUrl + '/incidents',
     method: 'POST',
@@ -26,7 +26,7 @@ const getUserIncidents = function (data) {
 }
 
 const getAllIncidents = function () {
-  console.log('sent request')
+  // console.log('sent request')
   return $.ajax({
     url: config.apiUrl + `/incidents`,
     method: 'GET',
@@ -47,7 +47,7 @@ const deleteIncident = function (data) {
   })
 }
 const updateIncident = function (data) {
-  console.log('upade data is', data)
+  // console.log('upade data is', data)
   return $.ajax({
     url: config.apiUrl + '/incidents/' + data.incident.id,
     method: 'PATCH',

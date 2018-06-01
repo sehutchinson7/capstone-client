@@ -5,7 +5,7 @@ const authEvents = require('./auth/events')
 const incidentEvents = require('./incident/events')
 // const bostonNeighborhoods = 'public/boston_neighborhoods.geojson'
 const bostonRobberies = 'public/boston_robberies_clean.geojson'
-const yodaIconPath = 'public/yoda.png'
+// const yodaIconPath = 'public/yoda.png'
 // const leafletMap = require('leaflet-map')
 
 // use require with a reference to bundle the file and use it in this file
@@ -27,10 +27,10 @@ $(() => {
         navigator.geolocation.getCurrentPosition(function (position) {
           const lat = position.coords.latitude
           const long = position.coords.longitude
-          console.log('--- Your Position: ---')
-          console.log('Lat: ' + position.coords.latitude)
-          console.log('Long: ' + position.coords.longitude)
-          console.log('-----------------------')
+          // console.log('--- Your Position: ---')
+          // console.log('Lat: ' + position.coords.latitude)
+          // console.log('Long: ' + position.coords.longitude)
+          // console.log('-----------------------')
 
           // let marker = L.marker([position.coords.latitude, position.coords.longitude].addTo(map)
           // add marker to the map
@@ -45,8 +45,7 @@ $(() => {
           yodaMarker.bindPopup('Somewhere close to this location, you are. Double click me to zoom here. Click the map to find coordinates.').openPopup()
         })
       // if geolocation is not supported
-      } else {
-        console.log('Geolocation not enabled or supported')
+        // console.log('Geolocation not enabled or supported')
       }
     }
     // `map` is an element, which is the same as the empty div in the html

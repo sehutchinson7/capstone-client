@@ -12,7 +12,7 @@ const onCreateIncident = function (event) {
     .then(ui.createIncidentSuccess)
     .then(onClearList())
     .catch(ui.createIncidentFailure)
-  console.log('working')
+  // console.log('working')
 }
 //
 // const onIndexIncident = function () {
@@ -46,7 +46,7 @@ const onUpdateIncident = function (event) {
     .then(ui.updateIncidentSuccess)
     .then(onClearList())
     .catch(ui.updateIncidentFailure)
-  console.log('working')
+  // console.log('working')
 }
 // const hideContent = function () {
 //   event.preventDefault()
