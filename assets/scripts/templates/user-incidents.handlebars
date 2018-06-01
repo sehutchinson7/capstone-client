@@ -4,7 +4,7 @@
 <p>Current user: {{user.email}}</p>
 <!-- <h1 data-id="{{incident._id}}"> <small>Name: {{incident.name}}</small></h1> -->
 {{#each user.incidents as |user|}}
-<h1 data-id="{{user.id}}"> <small>Name: {{user.name}}</small></h1>
+<h4 data-id="{{user.id}}">Name: {{user.name}}</h4>
 <li>Incident ID: {{user.id}}</li>
 <li>Robbery Location: {{user.location}}</li>
 <li>Date: {{user.date}}</li>
